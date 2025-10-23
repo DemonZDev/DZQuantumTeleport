@@ -1,0 +1,1029 @@
+# ================================================
+# DZQuantumTeleport Rank Configuration
+# Define per-rank permissions, limits, and costs
+# ================================================
+
+# World restriction settings
+world-restrictions:
+  enabled: true
+  # Check modes: current, destination, both
+  check-mode:
+    sethome: "current"
+    home: "destination"
+    movhome: "current"
+    warp: "destination"
+    spawn: "destination"
+    back: "destination"
+    rtp: "current"
+    tpa: "both"
+    call: "both"
+
+# Rank definitions
+ranks:
+  # ===== DEFAULT RANK =====
+  default:
+    display-name: "&7Default"
+    priority: 1
+    bypass-all-limits: false
+    bypass-all-costs: false
+    
+    # HOME COMMANDS
+    sethome:
+      enabled: true
+      max-homes: 3
+      cooldown: 300  # 5 minutes
+      hourly-limit: 5
+      daily-limit: 10
+      weekly-limit: 50
+      monthly-limit: 150
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 500
+        mobcoin: 0
+        gem: 10
+        xp-levels: 0
+        items:
+          - material: ENDER_PEARL
+            amount: 2
+    
+    home:
+      enabled: true
+      cooldown: 60  # 1 minute
+      hourly-limit: 20
+      daily-limit: 100
+      weekly-limit: 500
+      monthly-limit: 2000
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 50
+        mobcoin: 5
+        gem: 0
+        xp-levels: 0
+    
+    listhome:
+      enabled: true
+      cooldown: 10
+      hourly-limit: -1
+      daily-limit: -1
+      weekly-limit: -1
+      monthly-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    delhome:
+      enabled: true
+      cooldown: 120  # 2 minutes
+      hourly-limit: 5
+      daily-limit: 20
+      weekly-limit: 100
+      monthly-limit: 300
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    renmhome:
+      enabled: true
+      cooldown: 180  # 3 minutes
+      hourly-limit: 3
+      daily-limit: 10
+      weekly-limit: 40
+      monthly-limit: 120
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 100
+        gem: 5
+    
+    movhome:
+      enabled: true
+      cooldown: 300  # 5 minutes
+      hourly-limit: 3
+      daily-limit: 15
+      weekly-limit: 60
+      monthly-limit: 200
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 200
+        mobcoin: 10
+        gem: 5
+    
+    home-gui:
+      enabled: true
+      cooldown: 5
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    # WARP COMMANDS
+    warp:
+      enabled: true
+      cooldown: 45
+      hourly-limit: 30
+      daily-limit: 150
+      weekly-limit: 800
+      monthly-limit: 3000
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 100
+        mobcoin: 10
+        gem: 5
+    
+    listwarp:
+      enabled: true
+      cooldown: 10
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    warp-gui:
+      enabled: true
+      cooldown: 5
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    # SPAWN COMMANDS
+    spawn:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 50
+      daily-limit: 200
+      weekly-limit: -1
+      monthly-limit: -1
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 25
+        xp-levels: 0
+    
+    # NAVIGATION
+    back:
+      enabled: true
+      cooldown: 120  # 2 minutes
+      hourly-limit: 10
+      daily-limit: 50
+      weekly-limit: 300
+      monthly-limit: 1000
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 150
+        mobcoin: 15
+        xp-levels: 1
+    
+    # RANDOM TELEPORT
+    rtp:
+      enabled: true
+      cooldown: 600  # 10 minutes
+      hourly-limit: 3
+      daily-limit: 10
+      weekly-limit: 50
+      monthly-limit: 150
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 500
+        mobcoin: 50
+        gem: 25
+        xp-levels: 3
+        items:
+          - material: DIAMOND
+            amount: 3
+          - material: ENDER_PEARL
+            amount: 10
+    
+    # PLAYER TELEPORT
+    tpa:
+      enabled: true
+      cooldown: 45
+      hourly-limit: 15
+      daily-limit: 60
+      weekly-limit: 300
+      monthly-limit: 1000
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 75
+        mobcoin: 5
+    
+    call:
+      enabled: true
+      cooldown: 60
+      hourly-limit: 10
+      daily-limit: 40
+      weekly-limit: 200
+      monthly-limit: 800
+      allowed-worlds:
+        - "world"
+      world-restricted: true
+      costs:
+        money: 100
+        mobcoin: 10
+    
+    tp-accept:
+      enabled: true
+      cooldown: 5
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    tp-deny:
+      enabled: true
+      cooldown: 2
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    toggletp:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 10
+      daily-limit: 50
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    # REGION TELEPORT
+    rgtp-list:
+      enabled: true
+      cooldown: 10
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    rgtp-gui:
+      enabled: true
+      cooldown: 5
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+
+  # ===== VIP RANK =====
+  vip:
+    display-name: "&aVIP"
+    priority: 2
+    bypass-all-limits: false
+    bypass-all-costs: false
+    
+    sethome:
+      enabled: true
+      max-homes: 5
+      cooldown: 240
+      hourly-limit: 8
+      daily-limit: 20
+      weekly-limit: 100
+      monthly-limit: 300
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 400
+        gem: 8
+        items:
+          - material: ENDER_PEARL
+            amount: 1
+    
+    home:
+      enabled: true
+      cooldown: 45
+      hourly-limit: 30
+      daily-limit: 150
+      weekly-limit: 800
+      monthly-limit: 3000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 40
+        mobcoin: 3
+    
+    listhome:
+      enabled: true
+      cooldown: 5
+      costs:
+        money: 0
+    
+    delhome:
+      enabled: true
+      cooldown: 90
+      costs:
+        money: 0
+    
+    renmhome:
+      enabled: true
+      cooldown: 120
+      costs:
+        money: 75
+        gem: 3
+    
+    movhome:
+      enabled: true
+      cooldown: 240
+      costs:
+        money: 150
+        mobcoin: 7
+        gem: 3
+    
+    home-gui:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    warp:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 50
+      daily-limit: 250
+      weekly-limit: 1200
+      monthly-limit: 5000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 75
+        mobcoin: 7
+        gem: 3
+    
+    listwarp:
+      enabled: true
+      cooldown: 5
+      costs:
+        money: 0
+    
+    warp-gui:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    spawn:
+      enabled: true
+      cooldown: 20
+      costs:
+        money: 20
+    
+    back:
+      enabled: true
+      cooldown: 90
+      hourly-limit: 15
+      daily-limit: 75
+      weekly-limit: 400
+      monthly-limit: 1500
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 100
+        mobcoin: 10
+    
+    rtp:
+      enabled: true
+      cooldown: 480
+      hourly-limit: 5
+      daily-limit: 15
+      weekly-limit: 75
+      monthly-limit: 250
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 400
+        mobcoin: 40
+        gem: 20
+        xp-levels: 2
+        items:
+          - material: DIAMOND
+            amount: 2
+          - material: ENDER_PEARL
+            amount: 7
+    
+    tpa:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 20
+      daily-limit: 80
+      costs:
+        money: 60
+        mobcoin: 3
+    
+    call:
+      enabled: true
+      cooldown: 45
+      hourly-limit: 15
+      daily-limit: 60
+      costs:
+        money: 80
+        mobcoin: 7
+    
+    tp-accept:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    tp-deny:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    toggletp:
+      enabled: true
+      cooldown: 20
+      costs:
+        money: 0
+    
+    rgtp-list:
+      enabled: true
+      cooldown: 5
+      costs:
+        money: 0
+    
+    rgtp-gui:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+
+  # ===== MVP RANK =====
+  mvp:
+    display-name: "&bMVP"
+    priority: 3
+    bypass-all-limits: false
+    bypass-all-costs: false
+    
+    sethome:
+      enabled: true
+      max-homes: 8
+      cooldown: 180
+      hourly-limit: 12
+      daily-limit: 40
+      weekly-limit: 200
+      monthly-limit: 600
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: true
+      costs:
+        money: 300
+        gem: 5
+    
+    home:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 50
+      daily-limit: 250
+      weekly-limit: 1200
+      monthly-limit: 5000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: true
+      costs:
+        money: 30
+        mobcoin: 2
+    
+    listhome:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    delhome:
+      enabled: true
+      cooldown: 60
+      costs:
+        money: 0
+    
+    renmhome:
+      enabled: true
+      cooldown: 90
+      costs:
+        money: 50
+        gem: 2
+    
+    movhome:
+      enabled: true
+      cooldown: 180
+      costs:
+        money: 100
+        mobcoin: 5
+        gem: 2
+    
+    home-gui:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    warp:
+      enabled: true
+      cooldown: 20
+      hourly-limit: 80
+      daily-limit: 400
+      weekly-limit: 2000
+      monthly-limit: 8000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: true
+      costs:
+        money: 50
+        mobcoin: 5
+        gem: 2
+    
+    listwarp:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    warp-gui:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    spawn:
+      enabled: true
+      cooldown: 15
+      costs:
+        money: 15
+    
+    back:
+      enabled: true
+      cooldown: 60
+      hourly-limit: 25
+      daily-limit: 120
+      weekly-limit: 600
+      monthly-limit: 2500
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: true
+      costs:
+        money: 75
+        mobcoin: 7
+    
+    rtp:
+      enabled: true
+      cooldown: 360
+      hourly-limit: 8
+      daily-limit: 25
+      weekly-limit: 120
+      monthly-limit: 400
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: true
+      costs:
+        money: 300
+        mobcoin: 30
+        gem: 15
+        xp-levels: 1
+        items:
+          - material: DIAMOND
+            amount: 1
+          - material: ENDER_PEARL
+            amount: 5
+    
+    tpa:
+      enabled: true
+      cooldown: 20
+      hourly-limit: 30
+      daily-limit: 120
+      costs:
+        money: 40
+        mobcoin: 2
+    
+    call:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 20
+      daily-limit: 90
+      costs:
+        money: 60
+        mobcoin: 5
+    
+    tp-accept:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    tp-deny:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    toggletp:
+      enabled: true
+      cooldown: 10
+      costs:
+        money: 0
+    
+    rgtp-list:
+      enabled: true
+      cooldown: 3
+      costs:
+        money: 0
+    
+    rgtp-gui:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+
+  # ===== ELITE RANK =====
+  elite:
+    display-name: "&5Elite"
+    priority: 4
+    bypass-all-limits: false
+    bypass-all-costs: false
+    
+    sethome:
+      enabled: true
+      max-homes: 15
+      cooldown: 120
+      hourly-limit: 20
+      daily-limit: 80
+      weekly-limit: 400
+      monthly-limit: 1200
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: false
+      costs:
+        money: 200
+        gem: 3
+    
+    home:
+      enabled: true
+      cooldown: 15
+      hourly-limit: 100
+      daily-limit: 500
+      weekly-limit: 2500
+      monthly-limit: 10000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: false
+      costs:
+        money: 20
+        mobcoin: 1
+    
+    listhome:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    delhome:
+      enabled: true
+      cooldown: 30
+      costs:
+        money: 0
+    
+    renmhome:
+      enabled: true
+      cooldown: 60
+      costs:
+        money: 25
+        gem: 1
+    
+    movhome:
+      enabled: true
+      cooldown: 120
+      costs:
+        money: 50
+        mobcoin: 3
+        gem: 1
+    
+    home-gui:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    warp:
+      enabled: true
+      cooldown: 10
+      hourly-limit: 150
+      daily-limit: 800
+      weekly-limit: 4000
+      monthly-limit: 15000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: false
+      costs:
+        money: 25
+        mobcoin: 2
+        gem: 1
+    
+    listwarp:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    warp-gui:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    spawn:
+      enabled: true
+      cooldown: 10
+      costs:
+        money: 10
+    
+    back:
+      enabled: true
+      cooldown: 30
+      hourly-limit: 50
+      daily-limit: 250
+      weekly-limit: 1200
+      monthly-limit: 5000
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+        - "world_the_end"
+      world-restricted: false
+      costs:
+        money: 50
+        mobcoin: 5
+    
+    rtp:
+      enabled: true
+      cooldown: 240
+      hourly-limit: 12
+      daily-limit: 40
+      weekly-limit: 200
+      monthly-limit: 700
+      allowed-worlds:
+        - "world"
+        - "world_nether"
+      world-restricted: false
+      costs:
+        money: 200
+        mobcoin: 20
+        gem: 10
+        xp-levels: 0
+        items:
+          - material: ENDER_PEARL
+            amount: 3
+    
+    tpa:
+      enabled: true
+      cooldown: 10
+      hourly-limit: 50
+      daily-limit: 200
+      costs:
+        money: 20
+        mobcoin: 1
+    
+    call:
+      enabled: true
+      cooldown: 15
+      hourly-limit: 30
+      daily-limit: 150
+      costs:
+        money: 40
+        mobcoin: 3
+    
+    tp-accept:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    tp-deny:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+    
+    toggletp:
+      enabled: true
+      cooldown: 5
+      costs:
+        money: 0
+    
+    rgtp-list:
+      enabled: true
+      cooldown: 2
+      costs:
+        money: 0
+    
+    rgtp-gui:
+      enabled: true
+      cooldown: 1
+      costs:
+        money: 0
+
+  # ===== ADMIN RANK =====
+  admin:
+    display-name: "&c&lAdmin"
+    priority: 5
+    bypass-all-limits: true
+    bypass-all-costs: true
+    
+    sethome:
+      enabled: true
+      max-homes: -1  # Unlimited
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      weekly-limit: -1
+      monthly-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    home:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    listhome:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    delhome:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    renmhome:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    movhome:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    home-gui:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    warp:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    listwarp:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    warp-gui:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    spawn:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    back:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    rtp:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      allowed-worlds: []
+      world-restricted: false
+      costs:
+        money: 0
+    
+    tpa:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      costs:
+        money: 0
+    
+    call:
+      enabled: true
+      cooldown: 0
+      hourly-limit: -1
+      daily-limit: -1
+      costs:
+        money: 0
+    
+    tp-accept:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    tp-deny:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    toggletp:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    rgtp-list:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0
+    
+    rgtp-gui:
+      enabled: true
+      cooldown: 0
+      costs:
+        money: 0

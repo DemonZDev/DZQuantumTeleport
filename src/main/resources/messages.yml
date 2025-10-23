@@ -1,0 +1,314 @@
+# ================================================
+# DZQuantumTeleport Messages Configuration
+# All messages support color codes (&) and hex (&#RRGGBB)
+# Placeholders: {player}, {location}, {cost}, {time}, {world}, etc.
+# ================================================
+
+# General prefix
+prefix: "&8[&5DZQuantumTeleport&8]&r "
+
+# Color scheme
+colors:
+  primary: "&5"
+  secondary: "&b"
+  success: "&a"
+  error: "&c"
+  warning: "&e"
+  info: "&7"
+
+# ===== GENERAL =====
+general:
+  reload-success: "{prefix}&aConfiguration reloaded successfully!"
+  reload-error: "{prefix}&cError reloading configuration: {error}"
+  no-permission: "{prefix}&cYou don't have permission to use this command!"
+  invalid-command: "{prefix}&cInvalid command. Use &e/tp help&c for help."
+  player-only: "{prefix}&cThis command can only be used by players!"
+  player-not-found: "{prefix}&cPlayer &e{player}&c not found or offline!"
+  invalid-world: "{prefix}&cWorld &e{world}&c not found!"
+  console-not-allowed: "{prefix}&cThis command cannot be used from console!"
+  unknown-error: "{prefix}&cAn unknown error occurred. Please contact an administrator."
+
+# ===== TELEPORTATION =====
+teleportation:
+  success: "{prefix}&aTeleported successfully!"
+  success-to: "{prefix}&aTeleported to &e{location}&a!"
+  success-player: "{prefix}&aTeleported &e{player}&a to &e{location}&a!"
+  cancelled: "{prefix}&cTeleportation cancelled!"
+  cancelled-move: "{prefix}&cTeleportation cancelled because you moved!"
+  cancelled-damage: "{prefix}&cTeleportation cancelled because you took damage!"
+  cancelled-combat: "{prefix}&cTeleportation cancelled because you entered combat!"
+  warmup-start: "{prefix}&eInitiating teleport in &6{time}&e seconds... &7(Don't move!)"
+  warmup-countdown: "{prefix}&e{time}&7..."
+  unsafe-location: "{prefix}&cTeleportation failed: Destination is unsafe!"
+  world-not-loaded: "{prefix}&cThe destination world is not loaded!"
+  chunk-not-loaded: "{prefix}&cDestination chunk is loading... Please wait."
+
+# ===== COOLDOWN =====
+cooldown:
+  active: "{prefix}&cYou must wait &e{time}&c before using this command again!"
+  expired: "{prefix}&aYour cooldown has expired!"
+  remaining: "{prefix}&eTime remaining: &6{time}"
+  time-formats:
+    days: "{days}d {hours}h {minutes}m {seconds}s"
+    hours: "{hours}h {minutes}m {seconds}s"
+    minutes: "{minutes}m {seconds}s"
+    seconds: "{seconds}s"
+
+# ===== LIMITS =====
+limits:
+  hourly-reached: "{prefix}&cYou've reached your hourly limit for &e{command}&c! ({current}/{max})"
+  daily-reached: "{prefix}&cYou've reached your daily limit for &e{command}&c! ({current}/{max})"
+  weekly-reached: "{prefix}&cYou've reached your weekly limit for &e{command}&c! ({current}/{max})"
+  monthly-reached: "{prefix}&cYou've reached your monthly limit for &e{command}&c! ({current}/{max})"
+  usage-info: "{prefix}&eUsage: &6{current}&e/&6{max} &7({period})"
+  reset-notification: "{prefix}&aYour &e{period}&a limits have been reset!"
+  reset-in: "{prefix}&eYour &6{period}&e limits will reset in &6{time}&e."
+
+# ===== COSTS =====
+costs:
+  paid: "{prefix}&aPaid &e{cost}&a!"
+  paid-breakdown: "{prefix}&aCost breakdown:"
+  paid-money: "  &7- Money: &e${amount}"
+  paid-mobcoin: "  &7- MobCoins: &e{amount} MC"
+  paid-gem: "  &7- Gems: &e{amount} ◆"
+  paid-xp: "  &7- XP Levels: &e{amount}"
+  paid-items: "  &7- Items: &e{amount}x {item}"
+  refunded: "{prefix}&aRefunded &e{cost}&a due to cancellation!"
+  refunded-partial: "{prefix}&aRefunded &e{percentage}%&a of costs: &e{cost}"
+  insufficient-funds: "{prefix}&cInsufficient funds!"
+  insufficient-money: "  &7- Need &c${amount}&7 more money"
+  insufficient-mobcoin: "  &7- Need &c{amount} MC&7 more mobcoins"
+  insufficient-gem: "  &7- Need &c{amount} ◆&7 more gems"
+  insufficient-xp: "  &7- Need &c{amount}&7 more XP levels"
+  insufficient-items: "  &7- Need &c{amount}x {item}"
+  cost-preview: "{prefix}&eCost: &6{cost}"
+
+# ===== HOME SYSTEM =====
+home:
+  set-success: "{prefix}&aHome &e{name}&a set at your current location!"
+  set-error: "{prefix}&cFailed to set home &e{name}&c!"
+  set-already-exists: "{prefix}&cHome &e{name}&c already exists!"
+  set-max-reached: "{prefix}&cYou've reached your maximum home limit! ({current}/{max})"
+  teleport-success: "{prefix}&aTeleported to home &e{name}&a!"
+  teleport-not-found: "{prefix}&cHome &e{name}&c not found!"
+  list-header: "{prefix}&6Your Homes &7({count}/{max}):"
+  list-format: "  &e{name} &7- &b{world}&7 at &f{x}, {y}, {z}"
+  list-empty: "{prefix}&cYou don't have any homes set!"
+  delete-success: "{prefix}&aHome &e{name}&a deleted!"
+  delete-not-found: "{prefix}&cHome &e{name}&c not found!"
+  rename-success: "{prefix}&aHome &e{old_name}&a renamed to &e{new_name}&a!"
+  rename-not-found: "{prefix}&cHome &e{old_name}&c not found!"
+  rename-already-exists: "{prefix}&cHome &e{new_name}&c already exists!"
+  move-success: "{prefix}&aHome &e{name}&a moved to your current location!"
+  move-not-found: "{prefix}&cHome &e{name}&c not found!"
+  invalid-name: "{prefix}&cInvalid home name! Use 2-16 alphanumeric characters, underscores, or hyphens."
+  gui-title: "&6&lYour Homes"
+  gui-item-name: "&e{name}"
+  gui-item-lore:
+    - "&7World: &b{world}"
+    - "&7Location: &f{x}, {y}, {z}"
+    - ""
+    - "&aLeft-click to teleport"
+    - "&cShift-click to delete"
+
+# ===== WARP SYSTEM =====
+warp:
+  set-success: "{prefix}&aWarp &e{name}&a created as &6{visibility}&a!"
+  set-error: "{prefix}&cFailed to create warp &e{name}&c!"
+  set-already-exists: "{prefix}&cWarp &e{name}&c already exists!"
+  teleport-success: "{prefix}&aTeleported to warp &e{name}&a!"
+  teleport-not-found: "{prefix}&cWarp &e{name}&c not found!"
+  teleport-no-access: "{prefix}&cYou don't have access to warp &e{name}&c!"
+  list-header: "{prefix}&6Available Warps:"
+  list-format: "  &e{name} &7- &b{world}&7 at &f{x}, {y}, {z} &7[{visibility}]"
+  list-empty: "{prefix}&cNo warps available!"
+  delete-success: "{prefix}&aWarp &e{name}&a deleted!"
+  delete-not-found: "{prefix}&cWarp &e{name}&c not found!"
+  rename-success: "{prefix}&aWarp &e{old_name}&a renamed to &e{new_name}&a!"
+  rename-not-found: "{prefix}&cWarp &e{old_name}&c not found!"
+  rename-already-exists: "{prefix}&cWarp &e{new_name}&c already exists!"
+  visibility-changed: "{prefix}&aWarp &e{name}&a visibility changed to &6{visibility}&a!"
+  visibility-not-found: "{prefix}&cWarp &e{name}&c not found!"
+  move-success: "{prefix}&aWarp &e{name}&a moved to your current location!"
+  move-not-found: "{prefix}&cWarp &e{name}&c not found!"
+  invalid-name: "{prefix}&cInvalid warp name! Use 2-16 alphanumeric characters, underscores, or hyphens."
+  invalid-visibility: "{prefix}&cInvalid visibility! Use &epublic&c or &eprivate&c."
+  gui-title: "&b&lAvailable Warps"
+  gui-item-name: "&e{name}"
+  gui-item-lore:
+    - "&7World: &b{world}"
+    - "&7Location: &f{x}, {y}, {z}"
+    - "&7Visibility: &6{visibility}"
+    - ""
+    - "&aClick to teleport"
+
+# ===== SPAWN SYSTEM =====
+spawn:
+  teleport-success: "{prefix}&aTeleported to spawn!"
+  teleport-world: "{prefix}&aTeleported to spawn in &e{world}&a!"
+  set-success: "{prefix}&aSpawn set for world &e{world}&a!"
+  set-dimension: "{prefix}&aDimension spawn set for first-join players!"
+  not-set: "{prefix}&cSpawn not set for world &e{world}&c!"
+
+# ===== BACK SYSTEM =====
+back:
+  success: "{prefix}&aTeleported back to your previous location!"
+  no-location: "{prefix}&cNo previous location found!"
+  location-expired: "{prefix}&cYour previous location has expired!"
+
+# ===== RTP SYSTEM =====
+rtp:
+  searching: "{prefix}&eSearching for safe location..."
+  searching-attempt: "{prefix}&eAttempt {attempt}/{max}..."
+  success: "{prefix}&aTeleported to random location!"
+  success-coords: "{prefix}&aTeleported to &e{x}, {y}, {z}&a in &b{world}&a!"
+  failed: "{prefix}&cFailed to find safe location after {attempts} attempts!"
+  failed-biome: "{prefix}&cCannot teleport to blocked biome!"
+  failed-border: "{prefix}&cCannot teleport outside world border!"
+  tier-info: "{prefix}&eYour RTP Tier: {tier} &7({uses} uses)"
+  tier-upgrade: "{prefix}&6&lTIER UPGRADE! &eYou've unlocked {tier}&e!"
+  tier-progress: "{prefix}&eProgress to next tier: &6{current}&e/&6{required} &7uses"
+  statistics:
+    - "{prefix}&6=== RTP Statistics ==="
+    - "&eCurrent Tier: {tier}"
+    - "&eTotal Uses: &6{uses}"
+    - "&eDistance Range: &6{min}-{max} blocks"
+    - "&eCost Multiplier: &6{multiplier}x"
+  distance-info: "{prefix}&eTeleport distance: &6{distance}&e blocks"
+  tier-names:
+    tier-1: "&7Beginner Explorer"
+    tier-2: "&aExplorer"
+    tier-3: "&bAdventurer"
+    tier-4: "&dWanderer"
+    tier-5: "&5Voyager"
+    tier-6: "&6&lMaster Explorer"
+
+# ===== TPA SYSTEM =====
+tpa:
+  request-sent: "{prefix}&aTeleport request sent to &e{player}&a!"
+  request-received: "{prefix}&e{player}&a wants to teleport to you!"
+  request-received-hover: "&aClick to accept"
+  request-received-call: "{prefix}&e{player}&a wants you to teleport to them!"
+  accepted-sender: "{prefix}&e{player}&a accepted your teleport request!"
+  accepted-target: "{prefix}&aYou accepted &e{player}&a's teleport request!"
+  denied-sender: "{prefix}&e{player}&c denied your teleport request!"
+  denied-target: "{prefix}&cYou denied &e{player}&c's teleport request!"
+  expired: "{prefix}&cYour teleport request to &e{player}&c has expired!"
+  cancelled: "{prefix}&cTeleport request cancelled!"
+  no-requests: "{prefix}&cYou don't have any pending teleport requests!"
+  already-pending: "{prefix}&cYou already have a pending request to &e{player}&c!"
+  max-pending: "{prefix}&cYou've reached the maximum number of pending requests!"
+  toggle-enabled: "{prefix}&aYou are now accepting teleport requests!"
+  toggle-disabled: "{prefix}&cYou are no longer accepting teleport requests!"
+  toggle-target-disabled: "{prefix}&c{player} is not accepting teleport requests!"
+  self-request: "{prefix}&cYou cannot send a teleport request to yourself!"
+  gui-accept-title: "&a&lAccept Teleport Request"
+  gui-deny-title: "&c&lDeny Teleport Request"
+  gui-request-item:
+    - "&e{player}"
+    - "&7Sent: &f{time} ago"
+    - ""
+    - "&aClick to accept"
+
+# ===== ADMIN COMMANDS =====
+admin:
+  bring-success: "{prefix}&aForced &e{player}&a to teleport to you!"
+  bring-failed: "{prefix}&cFailed to teleport &e{player}&c!"
+  meet-success: "{prefix}&aSummoned &e{count}&a players to your location!"
+  meet-failed: "{prefix}&cFailed to summon some players!"
+  meet-format: "  &e{player} &7- {status}"
+  migrate-start: "{prefix}&eMigrating data from &6{from}&e to &6{to}&e..."
+  migrate-backup: "{prefix}&eCreating backup..."
+  migrate-transfer: "{prefix}&eTransferring data..."
+  migrate-verify: "{prefix}&eVerifying data integrity..."
+  migrate-success: "{prefix}&aData migration completed successfully!"
+  migrate-failed: "{prefix}&cData migration failed: {error}"
+  migrate-invalid: "{prefix}&cInvalid storage type! Use: flatfile, sqlite, or mysql"
+
+# ===== REGION SYSTEM =====
+region:
+  list-header: "{prefix}&6Available Regions:"
+  list-format: "  &e{name} &7- &b{world}&7 [{ranks}]"
+  list-empty: "{prefix}&cNo regions configured!"
+  set-success: "{prefix}&aRegion &e{name}&a created from your selection!"
+  set-no-selection: "{prefix}&cNo WorldEdit selection found!"
+  set-already-exists: "{prefix}&cRegion &e{name}&c already exists!"
+  rankset-success: "{prefix}&aRanks &e{ranks}&a allowed in region &e{region}&a!"
+  rankset-not-found: "{prefix}&cRegion &e{region}&c not found!"
+  permset-success: "{prefix}&aPermission &e{permission}&a set for region &e{region}&a!"
+  permset-not-found: "{prefix}&cRegion &e{region}&c not found!"
+  permset-invalid: "{prefix}&cInvalid permission! Use: enter, break, place, or attack"
+  no-access: "{prefix}&cYou don't have access to region &e{region}&c!"
+  gui-title: "&5&lRegion Management"
+
+# ===== RANK SYSTEM =====
+rank:
+  detected: "{prefix}&eRank detected: {rank}"
+  cache-cleared: "{prefix}&aRank cache cleared!"
+  info:
+    - "{prefix}&6=== Rank Information ==="
+    - "&eYour Rank: {rank}"
+    - "&eMax Homes: &6{max_homes}"
+    - "&eAllowed Worlds: &6{worlds}"
+  upgrade-prompt: "{prefix}&eUpgrade your rank to unlock more features! &7/buy"
+
+# ===== WORLD RESTRICTIONS =====
+world-restrictions:
+  sethome-denied: "{prefix}&cYou cannot set homes in world &e{world}&c!"
+  home-denied: "{prefix}&cYou cannot teleport to homes in world &e{world}&c!"
+  movhome-denied: "{prefix}&cYou cannot move homes in world &e{world}&c!"
+  warp-denied: "{prefix}&cYou cannot use warps in world &e{world}&c!"
+  spawn-denied: "{prefix}&cYou cannot use spawn in world &e{world}&c!"
+  back-denied: "{prefix}&cYou cannot use back in world &e{world}&c!"
+  rtp-denied: "{prefix}&cYou cannot use RTP in world &e{world}&c!"
+  tpa-denied: "{prefix}&cYou cannot use TPA between these worlds!"
+  call-denied: "{prefix}&cYou cannot use call between these worlds!"
+  upgrade-prompt: "{prefix}&eUpgrade your rank to access more worlds!"
+
+# ===== PARTICLES =====
+particles:
+  enabled: "{prefix}&aParticle effects enabled!"
+  disabled: "{prefix}&cParticle effects disabled!"
+  not-available: "{prefix}&cParticle effects are not available!"
+
+# ===== HELP MENU =====
+help:
+  header: "&8&m                    &r {prefix} &8&m                    "
+  footer: "&8&m                                                      "
+  page: "&ePage &6{current}&e/&6{total}"
+  command-format: "  &e{command} &7- {description}"
+  aliases: "    &7Aliases: &f{aliases}"
+  admin-section: "&6&lAdmin Commands:"
+  player-section: "&a&lPlayer Commands:"
+  commands:
+    tp: "Main teleport command"
+    spawn: "Teleport to spawn"
+    sethome: "Set a home"
+    home: "Teleport to home"
+    listhome: "List all homes"
+    delhome: "Delete a home"
+    renmhome: "Rename a home"
+    movhome: "Move a home"
+    warp: "Teleport to warp"
+    listwarp: "List all warps"
+    rtp: "Random teleport"
+    tpa: "Request teleport to player"
+    call: "Request player to teleport"
+    back: "Return to previous location"
+    toggletp: "Toggle teleport requests"
+    setspawn: "Set spawn point"
+    setwarp: "Create a warp"
+    bring: "Force teleport player"
+    meet: "Summon multiple players"
+    reload: "Reload configuration"
+
+# ===== ERROR MESSAGES =====
+errors:
+  database-error: "{prefix}&cDatabase error: {error}"
+  config-error: "{prefix}&cConfiguration error: {error}"
+  economy-error: "{prefix}&cEconomy system error!"
+  economy-not-found: "{prefix}&cDZEconomy not found! Please contact an administrator."
+  luckperms-error: "{prefix}&cLuckPerms error!"
+  worldedit-not-found: "{prefix}&cWorldEdit is required for this feature!"
+  worldguard-not-found: "{prefix}&cWorldGuard is required for this feature!"
+  api-error: "{prefix}&cAPI error: {error}"

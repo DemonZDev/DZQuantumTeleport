@@ -1,5 +1,5 @@
 name: DZQuantumTeleport
-version: ${project.version}
+version: ${version}
 main: online.demonzdevelopment.DZQuantumTeleport
 api-version: '1.21'
 author: hixeda6441

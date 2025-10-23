@@ -463,7 +463,7 @@ All rights reserved.
 
 ## 🙏 Credits
 
-- **Author**: hixeda6441
+- **Author**: GodHyena
 - **Organization**: DemonzDevelopment
 - **Dependencies**: DZEconomy, LuckPerms, PaperMC
 

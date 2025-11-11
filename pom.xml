@@ -67,6 +67,7 @@
             <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
+		
         <!-- DZEconomy -->
         <dependency>
             <groupId>com.github.DemonZDev</groupId>
@@ -74,6 +75,7 @@
             <version>1.2.0</version>
             <scope>provided</scope>
         </dependency>
+		
         <!-- WorldEdit -->
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>

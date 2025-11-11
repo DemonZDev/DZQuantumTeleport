@@ -29,6 +29,11 @@
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
+        <!-- DZEconomy API -->
+        <repository>
+            <id>jitpack.io</id>
+	   <url>https://jitpack.io</url>
+	</repository>
         <!-- LuckPerms -->
         <!-- Uses Maven Central -->
         <!-- WorldEdit/WorldGuard -->
@@ -62,7 +67,13 @@
             <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
-
+        <!-- DZEconomy -->
+        <dependency>
+            <groupId>com.github.DemonZDev</groupId>
+            <artifactId>DZEconomy</artifactId>
+            <version>1.2.0</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- WorldEdit -->
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>

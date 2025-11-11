@@ -32,8 +32,8 @@
         <!-- DZEconomy API -->
         <repository>
             <id>jitpack.io</id>
-	   <url>https://jitpack.io</url>
-	</repository>
+	        <url>https://jitpack.io</url>
+	    </repository>
         <!-- LuckPerms -->
         <!-- Uses Maven Central -->
         <!-- WorldEdit/WorldGuard -->
